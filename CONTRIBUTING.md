@@ -21,7 +21,7 @@ In this guide, you will get an overview of the project structure and setup, as w
     - [Environment Variables](#environment-variables)
       - [Configuring your Database](#configuring-your-database)
       - [Configuring Clerk](#configuring-clerk)
-      - [Configuring Upstash](#configuring-upstash)
+      - [Configuring Upstash (optional)](#configuring-upstash-optional)
     - [Running stuff](#running-stuff)
   - [Closing notes](#closing-notes)
 
@@ -171,15 +171,16 @@ And now you got Auth!
 
 #### Configuring Upstash (optional)
 
+> **Note** Upstash is used to provide rate-limiting capabilities to Noodle, which is optional locally as that it's really only needed in the production version.
+
 1. Create your account through [Upstash's dashboard](https://console.upstash.com)
 2. Click on "Create database"
 3. Give it a name and a region
 4. Enable TLS (SSL) encryption
 5. Press create
 6. In the "Connect to your database" section, select "@upstash/redis"
-7. Copy the url into your `.env` file as `REDIS_URL` key
-8. Copy the token into your `.env` file as `REDIS_TOKEN` key
-9. Upstash is only used for ratelimiting, if left empty then ratelimiting will be disabled
+7. Copy the url into your `.env` file as `UPSTASH_REDIS_REST_URL` key
+8. Copy the token into your `.env` file as `UPSTASH_REDIS_REST_TOKEN` key
 
 And that's all for the redis part!
 
